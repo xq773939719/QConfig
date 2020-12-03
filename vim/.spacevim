@@ -1,0 +1,93 @@
+" Comment the following line if you don't want Vim and NeoVim to share the
+" same plugin download directory.
+let g:spacevim_plug_home = '~/.vim/plugged'
+
+" Uncomment the following line to override the leader key. The default value is space key "<\Space>".
+" let g:spacevim_leader = "<\Space>"
+
+" Uncomment the following line to override the local leader key. The default value is comma ','.
+" let g:spacevim_localleader = ','
+
+" Enable the existing layers in space-vim.
+" Refer to https://github.com/liuchengxu/space-vim/blob/master/layers/LAYERS.md for all available layers.
+let g:spacevim_layers = [
+      \ 'fzf', 'better-defaults', 'which-key',
+      \ ]
+
+" Uncomment the following line if your terminal(-emulator) supports true colors.
+" let g:spacevim_enable_true_color = 1
+
+" Uncomment the following if you have some nerd font installed.
+" let g:spacevim_nerd_fonts = 1
+
+" If you want to have more control over the layer, try using Layer command.
+" if g:spacevim.gui
+"   Layer 'airline'
+" endif
+
+" Manage your own plugins.
+" Refer to https://github.com/junegunn/vim-plug for more detials.
+function! UserInit()
+
+  " Add your own plugin via Plug command.
+    Plug 'junegunn/seoul256.vim'
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'tomasr/molokai'
+    Plug 'vim-scripts/phd'
+    Plug 'Lokaltog/vim-powerline'
+    Plug 'octol/vim-cpp-enhanced-highlight'
+    Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'derekwyatt/vim-fswitch'
+    Plug 'kshenoy/vim-signature'
+    Plug 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
+    Plug 'majutsushi/tagbar'
+    Plug 'vim-scripts/indexer.tar.gz'
+    Plug 'vim-scripts/DfrankUtil'
+    Plug 'vim-scripts/vimprj'
+    Plug 'dyng/ctrlsf.vim'
+    Plug 'terryma/vim-multiple-cursors'
+    Plug 'scrooloose/nerdcommenter'
+    Plug 'vim-scripts/DrawIt'
+    Plug 'SirVer/ultisnips'
+    Plug 'Valloric/YouCompleteMe'
+    Plug 'derekwyatt/vim-protodef'
+    Plug 'scrooloose/nerdtree'
+    Plug 'fholgado/minibufexpl.vim'
+    Plug 'gcmt/wildfire.vim'
+    Plug 'sjl/gundo.vim'
+    Plug 'Lokaltog/vim-easymotion'
+    Plug 'suan/vim-instant-markdown'
+    Plug 'itchyny/lightline.vim'
+
+endfunction
+
+" Override the default settings from space-vim as well as adding extras
+function! UserConfig()
+
+  " Override the default settings.
+  " Uncomment the following line to disable relative number.
+  " set norelativenumber
+    " 总是显示状态栏
+    set laststatus=2
+    " 显示光标当前位置
+    set ruler
+    " 开启行号显示
+    set number
+    " 高亮显示当前行/列
+    set cursorline
+    " set cursorcolumn
+    " 高亮显示搜索结果
+    set hlsearch
+    
+    " 开启语法高亮功能
+    syntax enable
+    " 允许用指定语法高亮配色方案替换默认方案
+    syntax on
+
+
+  " Adding extras.
+  " Uncomment the following line If you have installed the powerline fonts.
+  " It is good for airline layer.
+  " let g:airline_powerline_fonts = 1
+
+endfunction
