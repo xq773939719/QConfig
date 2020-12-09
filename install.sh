@@ -7,10 +7,10 @@ sudo apt install build-essential linuxbrew-wrapper gnome-tweak-tool chrome-gnome
 
 # 自定义环境
 # "配置环境变量"
-cd $HOME/MyConfigFiles/envs
+cd $HOME/QConfig/envs
 cp .alias ~ && sudo echo "source '$HOME/.alias'" >> ~/.zshrc
 cp .env ~ && sudo echo "source '$HOME/.env'" >> ~/.zshrc
-cd $HOME/MyConfigFiles/
+cd $HOME/QConfig/
 cp -R cmd $HOME/
 
 # Linuxbrew
@@ -35,7 +35,7 @@ chsh -s `which zsh`
 # 配置oh-my-zsh
 cd
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sudo cat $HOME/MyConfigFiles/zsh/.zshrc > ~/.zshrc
+sudo cat $HOME/QConfig/zsh/.zshrc > ~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -48,7 +48,7 @@ cp .tmux/.tmux.conf.local .
 # 管理工具tpm 配置 使用 I 进行安装
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # 自定义tmux vi .tmux.conf 追加自定义内容
-sudo cat $HOME/MyConfigFiles/tmux/.tmux.conf >> ~/.tmux.conf
+sudo cat $HOME/QConfig/tmux/.tmux.conf >> ~/.tmux.conf
 
 # 配置vim
 cd
@@ -61,13 +61,13 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # 自定义vim cd .vim_runtime 修改 my_configs.vim
 touch ~/.vim_runtime/my_configs.vim
 
-sudo cat $HOME/MyConfigFiles/vim/my_configs.vim > ~/.vim_runtime/my_configs.vim
+sudo cat $HOME/QConfig/vim/my_configs.vim > ~/.vim_runtime/my_configs.vim
 
 # 配置spacevim
 #SpaceVim curl -sLf https://spacevim.org/install.sh | bash
 bash <(curl -fsSL https://git.io/vFUhE) # space-vim
 # 添加我的自定义文件
-sudo cat $HOME/MyConfigFiles/vim/.spacevim > ~/.spacevim
+sudo cat $HOME/QConfig/vim/.spacevim > ~/.spacevim
 # 配置透明背景 放入.vimrc 软连接文件
 # 配置vim 字体
 # set gfn=monaco:h13 // mac
