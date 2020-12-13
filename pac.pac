@@ -1,6 +1,6 @@
 // http://pac.itzmx.com
 
-var proxy = "PROXY 192.168.31.147:7890;";
+var proxy = "SOCKS 192.168.31.147:7890; PROXY 192.168.31.147:7890; DIRECT;";
 
 var domains = {
   "pinterest.com": 1,
