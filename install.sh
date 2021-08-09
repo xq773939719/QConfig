@@ -84,6 +84,7 @@ brew update
 
 echo "配置命令行工具" >> configLinuxEnv.log
 brew install ag htop thefuck tig tldr httpie nmap autojump cheat timothyye/tap/skm fzf you-get libav tree lolcat ffmpeg
+brew install readline sqlite libpng pkg-config libtiff icu4c pcre gdbm git freetype xz imagemagick cmake
 
 # 优秀的命令行工具
 sudo apt install lolcat cloc mycli shellcheck mosh neofetch screenfetch ccache emacs awesome docky nload ncdu marble p7zip actiona cmatrix gnuplot
