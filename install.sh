@@ -85,6 +85,8 @@ brew update
 echo "配置命令行工具" >> configLinuxEnv.log
 brew install ag htop thefuck tig tldr httpie nmap autojump cheat timothyye/tap/skm fzf you-get libav tree lolcat ffmpeg
 brew install readline sqlite libpng pkg-config libtiff icu4c pcre gdbm git freetype xz imagemagick cmake
+brew install tig mycli shellcheck yapf mosh fzf fpp axel ccache cloc mc icdiff pm ncdu ranger multitail bro
+brew install bash-completion nmap screenfetch figlet tldr shellcheck cloc axel go coreutils lua tree luarocks
 
 # 优秀的命令行工具
 sudo apt install lolcat cloc mycli shellcheck mosh neofetch screenfetch ccache emacs awesome docky nload ncdu marble p7zip actiona cmatrix gnuplot
