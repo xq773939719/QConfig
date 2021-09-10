@@ -83,7 +83,7 @@ cd "$(brew --repo)" && git remote set-url origin https://git.coding.net/homebrew
 brew update
 
 echo "配置命令行工具" >> configLinuxEnv.log
-brew install archey protobuf graphicsmagick glew glfw llvm
+brew install archey protobuf graphicsmagick glew glfw llvm libimobiledevice
 brew install ag htop thefuck tig tldr httpie nmap autojump cheat timothyye/tap/skm fzf you-get libav tree lolcat ffmpeg
 brew install readline sqlite libpng pkg-config libtiff icu4c pcre gdbm git freetype xz imagemagick cmake
 brew install tig mycli shellcheck yapf mosh fzf fpp axel ccache cloc mc icdiff pm ncdu ranger multitail bro
