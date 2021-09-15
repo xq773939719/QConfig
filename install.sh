@@ -97,7 +97,7 @@ sudo npm install figlet -g
 sudo npm install gtop -g
 sudo npm install bwm-ng -g
 sudo npm install n -g
-sudo npm install -g quicktype 
+sudo npm install -g quicktype typescript
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 pip install glances
