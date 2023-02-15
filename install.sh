@@ -49,6 +49,7 @@ cp .tmux/.tmux.conf.local .
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # 自定义tmux vi .tmux.conf 追加自定义内容
 sudo cat $HOME/QConfig/tmux/.tmux.conf >> ~/.tmux.conf
+tmux source ~/.tmux.conf
 
 # 配置vim
 cd
