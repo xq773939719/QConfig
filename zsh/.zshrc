@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -73,21 +75,21 @@ ZSH_THEME="astro"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
- plugins=(git
-     autojump
-     zsh-autosuggestion
-     zsh-syntax-highlighting
-     extract
-     bat
-     cp
-     git-open
-     history-substring-search
-     colored-man-pages
-     common-aliases
-     dircycle
-     dirpersist
-     z
- )
+plugins=(
+   git
+   zsh-completions
+   zsh-autosuggestions
+   zsh-syntax-highlighting
+   extract
+   cp
+   git-open
+   history-substring-search
+   colored-man-pages
+   common-aliases
+   dircycle
+   dirpersist
+   z
+)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -137,6 +139,9 @@ export NVM_DIR="/Users/xq/.nvm"
 source "$HOME/.env"
 source "$HOME/.alias"
 
-
+source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
