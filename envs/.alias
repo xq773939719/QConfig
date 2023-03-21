@@ -5,7 +5,7 @@ alias grep='grep -i --color' #用颜色标识，更醒目；忽略大小写
 alias vi=vim
 alias c='clear'  # 快速清屏
 alias p='pwd'
-alias sl='screenfetch | lolcat'
+alias repo="cd $HOME/代码/\#Repo/"
 # 进入目录并列出文件，如 cdl ../conf.d/
 cdl() { cd "$@" && pwd ; ls -alF; }
 
@@ -81,9 +81,6 @@ fi
 }
 
 # 其它
-
-alias sshmacpro="ssh macpro.xq"
-alias sshubuntu="ssh ubuntu.xq"
 alias cr="clear"
 
 alias h='history'
@@ -118,3 +115,5 @@ alias cu='curl -L'
 alias tn='telnet'
 alias to='touch'
 alias hig='history 1 | grep -i'
+alias cdcode='cd /Users/xq/代码'
+alias lv='/Users/xq/.local/bin/lvim'
