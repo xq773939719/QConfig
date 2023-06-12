@@ -50,3 +50,5 @@ syntax enable
 " 允许用指定语法高亮配色方案替换默认方案
 syntax on
 
+set gfn=monaco:h13 // mac
+colorscheme space-vim-dark
