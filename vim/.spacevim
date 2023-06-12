@@ -48,7 +48,7 @@ function! UserInit()
     Plug 'terryma/vim-multiple-cursors'
     Plug 'scrooloose/nerdcommenter'
     Plug 'vim-scripts/DrawIt'
-    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
     Plug 'Valloric/YouCompleteMe'
     Plug 'derekwyatt/vim-protodef'
     Plug 'scrooloose/nerdtree'
@@ -84,6 +84,7 @@ function! UserConfig()
     " 允许用指定语法高亮配色方案替换默认方案
     syntax on
 
+    set gfn=monaco:h13
 
   " Adding extras.
   " Uncomment the following line If you have installed the powerline fonts.
