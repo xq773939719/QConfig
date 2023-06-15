@@ -8,14 +8,14 @@ sudo apt install build-essential linuxbrew-wrapper gnome-tweak-tool chrome-gnome
 # 自定义环境
 # "配置环境变量"
 cd $HOME/QConfig/envs
-cp .alias ~ && sudo echo "source '$HOME/.alias'" >> ~/.zshrc
-cp .env ~ && sudo echo "source '$HOME/.env'" >> ~/.zshrc
+cp .alias ~ && sudo echo "source '$HOME/.alias'" >>~/.zshrc
+cp .env ~ && sudo echo "source '$HOME/.env'" >>~/.zshrc
 cd $HOME/QConfig/
 cp -R cmd $HOME/
 
 # Linuxbrew
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >> $HOME/.env
+echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>$HOME/.env
 
 # 终端颜色
 bash -c "$(wget -qO- https://git.io/vQgMr)" # 配置终端颜色
@@ -31,11 +31,11 @@ wget --no-check-certificate -O tcp.sh https://github.com/cx9208/Linux-NetSpeed/r
 bash <(curl -s -L https://git.io/v2ray.sh)
 
 # 设置默认终端
-chsh -s `which zsh`
+chsh -s $(which zsh)
 # 配置oh-my-zsh
 cd
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sudo cat $HOME/QConfig/zsh/.zshrc > ~/.zshrc
+sudo cat $HOME/QConfig/zsh/.zshrc >~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -49,7 +49,7 @@ cp .tmux/.tmux.conf.local .
 # 管理工具tpm 配置 使用 I 进行安装
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # 自定义tmux vi .tmux.conf 追加自定义内容
-sudo cat $HOME/QConfig/tmux/.tmux.conf >> ~/.tmux.conf
+sudo cat $HOME/QConfig/tmux/.tmux.conf >>~/.tmux.conf
 tmux source ~/.tmux.conf
 
 # 配置vim
@@ -59,17 +59,17 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # 管理工具 vim-plug 配置 使用 :PlugInstall 进行安装
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 # 自定义vim cd .vim_runtime 修改 my_configs.vim
 touch ~/.vim_runtime/my_configs.vim
 
-sudo cat $HOME/QConfig/vim/my_configs.vim > ~/.vim_runtime/my_configs.vim
+sudo cat $HOME/QConfig/vim/my_configs.vim >~/.vim_runtime/my_configs.vim
 
 # 配置spacevim
 #SpaceVim curl -sLf https://spacevim.org/install.sh | bash
 bash <(curl -fsSL https://git.io/vFUhE) # space-vim
 # 添加我的自定义文件
-sudo cat $HOME/QConfig/vim/.spacevim > ~/.spacevim
+sudo cat $HOME/QConfig/vim/.spacevim >~/.spacevim
 # 配置透明背景 放入.vimrc 软连接文件
 # 配置vim 字体
 # set gfn=monaco:h13 // mac
@@ -79,17 +79,17 @@ sudo cat $HOME/QConfig/vim/.spacevim > ~/.spacevim
 # hi LineNr     ctermbg=NONE guibg=NONE
 # hi SignColumn ctermbg=NONE guibg=NONE
 
-
 # 设置homebrew源
 cd "$(brew --repo)" && git remote set-url origin https://git.coding.net/homebrew/homebrew.git
 brew update
 
-echo "配置命令行工具" >> configLinuxEnv.log
+echo "配置命令行工具" >>configLinuxEnv.log
 brew install archey protobuf graphicsmagick glew glfw llvm libimobiledevice
 brew install ag htop thefuck tig tldr httpie nmap autojump cheat timothyye/tap/skm fzf you-get libav tree lolcat ffmpeg
 brew install readline sqlite libpng pkg-config libtiff icu4c pcre gdbm git freetype xz imagemagick cmake
 brew install tig mycli shellcheck yapf mosh fzf fpp axel ccache cloc mc icdiff pm ncdu ranger multitail bro
 brew install bash-completion nmap screenfetch figlet tldr shellcheck cloc axel go coreutils lua tree luarocks
+brew install root
 
 # 优秀的命令行工具
 sudo apt install lolcat cloc mycli shellcheck mosh neofetch screenfetch ccache emacs awesome docky nload ncdu marble p7zip actiona cmatrix gnuplot
@@ -119,23 +119,22 @@ pip install glances
 #         http://panqiincs.me/2019/06/05/after-installing-manjaro/
 # edebf798-1733-4c4e-b268-1d8d69aea614
 
-
 # 以下是Manjaro配置
 
 # pacman 安装方式
-pacman -S package_name        # 安装软件
-pacman -S extra/package_name  # 安装不同仓库中的版本
-pacman -Syu                   # 升级整个系统，y 是更新数据库，yy 是强制更新，u 是升级软件
-pacman -Ss string             # 在包数据库中查询软件
-pacman -Si package_name       # 显示软件的详细信息
-pacman -Sc                    # 清除软件缓存，即 /var/cache/pacman/pkg 目录下的文件
-pacman -R package_name        # 删除单个软件
-pacman -Rs package_name       # 删除指定软件及其没有被其他已安装软件使用的依赖关系
-pacman -Qs string             # 查询已安装的软件包
-pacman -Qi package_name       # 查询本地安装包的详细信息
-pacman -Ql package_name       # 获取已安装软件所包含的文件的列表
-pacman -U package.tar.zx      # 从本地文件安装
-pactree package_name          # 显示软件的依赖树
+pacman -S package_name       # 安装软件
+pacman -S extra/package_name # 安装不同仓库中的版本
+pacman -Syu                  # 升级整个系统，y 是更新数据库，yy 是强制更新，u 是升级软件
+pacman -Ss string            # 在包数据库中查询软件
+pacman -Si package_name      # 显示软件的详细信息
+pacman -Sc                   # 清除软件缓存，即 /var/cache/pacman/pkg 目录下的文件
+pacman -R package_name       # 删除单个软件
+pacman -Rs package_name      # 删除指定软件及其没有被其他已安装软件使用的依赖关系
+pacman -Qs string            # 查询已安装的软件包
+pacman -Qi package_name      # 查询本地安装包的详细信息
+pacman -Ql package_name      # 获取已安装软件所包含的文件的列表
+pacman -U package.tar.zx     # 从本地文件安装
+pactree package_name         # 显示软件的依赖树
 
 # 换源
 sudo pacman -Syy
@@ -148,7 +147,7 @@ sudo vim /etc/pacman.conf
 sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring
 
 # 搜狗输入法
-sudo pacman -S fcitx-sogoupinyin fcitx-im fcitx-configtool  # 输入法
+sudo pacman -S fcitx-sogoupinyin fcitx-im fcitx-configtool # 输入法
 # sudo pacman -S fcitx-lilydjwg-git fcitx-qt5
 #常用拼音、日语输入法
 # sudo pacman -S  fcitx fcitx-googlepinyin fcitx-mozc fcitx-cloudpinyin fcitx-configtool fcitx-gtk3 fcitx-gtk2
@@ -165,15 +164,15 @@ gsettings set org.gnome.desktop.interface scaling-factor 2
 
 # 通过pacman安装
 sudo pacman -S vim git zsh tree \
-     google-chrome netease-cloud-music virtualbox virtualbox-guest-dkms vmware-workstation \
-     goldendict ttf-wps-fonts wps-office neofetch screenfetch lolcat \
-     wiznote shadowsocks-qt5 electron-ssr proxychains-ng qtcreator visual-studio-code-bin make \
-     screenfetch deepin.com.qq.im deepin.com.qq.office clang electronic-wechat-git gdb flameshot-git \
-     wps-office net-tools base-devel docker docker-compose maven nodejs npm \
-     telegram-desktop typora mailspring libsecret uget aria2 redshift deepin-screenshot \
-     byobu cockpit aurman cockpit firefox firefox-i18n-zh-cn telegram-desktop dropbox chromium \
-     simplescreensecorder kdenlive vlc deepin-movie foxitreader youdao-dict teamviewer file-roller \
-     baidunetdisk deepin-picker rdesktop
+  google-chrome netease-cloud-music virtualbox virtualbox-guest-dkms vmware-workstation \
+  goldendict ttf-wps-fonts wps-office neofetch screenfetch lolcat \
+  wiznote shadowsocks-qt5 electron-ssr proxychains-ng qtcreator visual-studio-code-bin make \
+  screenfetch deepin.com.qq.im deepin.com.qq.office clang electronic-wechat-git gdb flameshot-git \
+  wps-office net-tools base-devel docker docker-compose maven nodejs npm \
+  telegram-desktop typora mailspring libsecret uget aria2 redshift deepin-screenshot \
+  byobu cockpit aurman cockpit firefox firefox-i18n-zh-cn telegram-desktop dropbox chromium \
+  simplescreensecorder kdenlive vlc deepin-movie foxitreader youdao-dict teamviewer file-roller \
+  baidunetdisk deepin-picker rdesktop
 
 # RIME 中州韵输入法是 Linux 下广受好评的中文输入法。鉴于搜狗输入法的 bug 不断（QT4），笔者更推荐 RIME 来作为中文输入法。
 # sudo pacman -S fcitx-rime fcitx-cloudpinyin fcitx-googlepinyin 繁体可以配置成简体 上面网址有方法
@@ -205,9 +204,9 @@ yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save
 # 开启 pacman 和 yay 的彩色输出
 sudo sed -i "s/#Color/Color/g" /etc/pacman.conf
 yay -S python-pip joplin deepin-wine-tim deepin-wine-wechat deepin-wine-thunderspeed tmux \
-       yaru-gnome-shell-theme yaru-gtk-theme yaru-icon-theme yaru-session \
-       deepin.com.qq.office lib32-freetype2-infinality-ultimate gimp noto-fonts-emoji \
-       wps-office wps-office-fonts wps-office-mime ttf-wps-fonts gnome-tweak-tool \
+  yaru-gnome-shell-theme yaru-gtk-theme yaru-icon-theme yaru-session \
+  deepin.com.qq.office lib32-freetype2-infinality-ultimate gimp noto-fonts-emoji \
+  wps-office wps-office-fonts wps-office-mime ttf-wps-fonts gnome-tweak-tool
 # 高分屏 tim wechat
 # env WINEPREFIX="$HOME/.deepinwine/Deepin-TIM" winecfg
 # env WINEPREFIX="$HOME/.deepinwine/Deepin-WeChat" winecfg
@@ -215,7 +214,7 @@ yay -S python-pip joplin deepin-wine-tim deepin-wine-wechat deepin-wine-thunders
 # git 配置
 $ git config --global user.name "Your_username"
 $ git config --global user.email "your@email.com"
-$ git config --global core.editor vim  # 使用 Vim 来编辑 Git 提交信息
+$ git config --global core.editor vim # 使用 Vim 来编辑 Git 提交信息
 
 # 开发配置
 sudo pacman -S java-runtime-common java-environment-common
