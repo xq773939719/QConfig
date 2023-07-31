@@ -81,6 +81,9 @@ sudo cat $HOME/QConfig/vim/.spacevim >~/.spacevim
 # hi LineNr     ctermbg=NONE guibg=NONE
 # hi SignColumn ctermbg=NONE guibg=NONE
 
+# Colors
+sudo gem install colorls -n /usr/local/bin
+
 # 设置homebrew源
 cd "$(brew --repo)" && git remote set-url origin https://git.coding.net/homebrew/homebrew.git
 brew update
