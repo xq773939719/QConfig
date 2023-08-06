@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -5,8 +7,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -22,7 +22,7 @@ export ZSH=$HOME/.oh-my-zsh
 #首选
 #ZSH_THEME="steeef"
 #ZSH_THEME="bira"
-# ZSH_THEME="astro"
+#ZSH_THEME="astro"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 #ZSH_THEME="powerlevel9k/powerlevel9k"
 #ZSH_THEME="agnoster"
@@ -83,21 +83,27 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
- plugins=(
-    git
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    extract
-    cp
-    git-open
-    history-substring-search
-    colored-man-pages
-    common-aliases
-    dircycle
-    dirpersist
-    z
- )
-
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  extract
+  cp
+  git-open
+  history-substring-search
+  colored-man-pages
+  common-aliases
+  dircycle
+  dirpersist
+  z
+  sudo
+  ufw
+  pip
+  command-not-found
+  brew 
+  node 
+  npm
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -179,9 +185,6 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # JINA_CLI_END
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/xq/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -201,3 +204,6 @@ alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Fig post block. Keep at the bottom of this file.
+#[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
