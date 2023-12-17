@@ -124,14 +124,17 @@ alias hig='history 1 | grep -i'
 alias cdcode='cd /Users/xq/代码'
 alias lv='/Users/xq/.local/bin/lvim'
 alias fixapp='sudo xattr -rd com.apple.quarantine'
-
-alias ll='colorls -lA --sd --gs --group-directories-first'
-alias ls='colorls --group-directories-first'
-alias lc='colorls'                              # Colorls with no options
-alias l='colorls -l --sort-dirs'                # List
-alias ll='colorls -lA --git-status --sort-dirs' # List, show almost all files (excludes ./ and ../)
-alias la='colorls -la --sort-dirs'              # List, show all files
-alias lt='colorls -lt  --git-status'            # List, sort by modification time (newest first)
-alias lS='colorls -lS  --git-status'            # List, sort by size (largest first)
-alias lr='colorls --tree=5'                     # Show tree heirarchy, capped at depth 5 just in case
-alias lx='colorls -lAX --git-status'            # List, Sort by file type
+alias vm=nvim
+# alias ll='colorls -lA --sd --gs --group-directories-first'
+# alias ls='colorls --group-directories-first'
+# alias lc='colorls'                              # Colorls with no options
+# alias l='colorls -l --sort-dirs'                # List
+# alias ll='colorls -lA --git-status --sort-dirs' # List, show almost all files (excludes ./ and ../)
+# alias la='colorls -la --sort-dirs'              # List, show all files
+# alias lt='colorls -lt  --git-status'            # List, sort by modification time (newest first)
+# alias lS='colorls -lS  --git-status'            # List, sort by size (largest first)
+# alias lr='colorls --tree=5'                     # Show tree heirarchy, capped at depth 5 just in case
+# alias lx='colorls -lAX --git-status'            # List, Sort by file type
+alias gitpullall='find . -maxdepth 3 -type d -name .git  -exec sh -c "cd \"{}\"/../ && pwd && git  pull --rebase" \;'
+alias o='open .'
+alias e='code .'
