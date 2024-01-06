@@ -138,3 +138,5 @@ alias vm=nvim
 alias gitpullall='find . -maxdepth 3 -type d -name .git  -exec sh -c "cd \"{}\"/../ && pwd && git  pull --rebase" \;'
 alias o='open .'
 alias e='code .'
+alias abrew='arch -arm64 /opt/homebrew/bin/brew'
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
