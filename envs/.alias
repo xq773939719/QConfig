@@ -5,7 +5,6 @@ alias grep='grep -i --color' #用颜色标识，更醒目；忽略大小写
 alias vi=vim
 alias c='clear' # 快速清屏
 alias p='pwd'
-alias repo="cd $HOME/代码/\#Repo/"
 # 进入目录并列出文件，如 cdl ../conf.d/
 cdl() {
   cd "$@" && pwd
@@ -88,7 +87,6 @@ function extract {
 
 # 其它
 alias cr="clear"
-
 alias h='history'
 alias j='ls -F --color 2>/dev/null || ls -FG'
 alias lsd='ls --color -d *(-/DN) 2>/dev/null || ls -dG *(-/DN)'
@@ -121,7 +119,6 @@ alias cu='curl -L'
 alias tn='telnet'
 alias to='touch'
 alias hig='history 1 | grep -i'
-alias cdcode='cd /Users/xq/代码'
 alias lv='/Users/xq/.local/bin/lvim'
 alias fixapp='sudo xattr -rd com.apple.quarantine'
 alias vm=nvim
@@ -140,3 +137,13 @@ alias o='open .'
 alias e='code .'
 alias abrew='arch -arm64 /opt/homebrew/bin/brew'
 alias ibrew='arch -x86_64 /usr/local/bin/brew'
+
+function Bili {
+  alias bbgf='./bbgit fetch'
+  alias bbgp='./bbgit pull'
+  alias bbgc='./bbgit checkout'
+  alias bbgr='./bbgit reset --hard'
+  alias bbgd='./bbgit diff'
+  alias bbgmr='./bbgit mr -t'
+}
+Bili
