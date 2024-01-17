@@ -145,5 +145,7 @@ function Bili {
   alias bbgr='./bbgit reset --hard'
   alias bbgd='./bbgit diff'
   alias bbgmr='./bbgit mr -t'
+  alias bbgprune='./bbgit prune'
+  alias bbsh='sh build.sh'
 }
 Bili
