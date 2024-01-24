@@ -137,6 +137,7 @@ alias o='open .'
 alias e='code .'
 alias abrew='arch -arm64 /opt/homebrew/bin/brew'
 alias ibrew='arch -x86_64 /usr/local/bin/brew'
+alias sb='sh build.sh'
 
 function Bili {
   alias bbgf='./bbgit fetch'
