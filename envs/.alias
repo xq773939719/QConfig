@@ -150,3 +150,5 @@ function Bili {
   alias bbsh='sh build.sh'
 }
 Bili
+
+alias qCodes='cd /Volumes/Data/Codes'
