@@ -152,3 +152,4 @@ function Bili {
 Bili
 
 alias qCodes='cd /Volumes/Data/Codes'
+alias loktar='qCodes && cd ./Bilibili/loktar'

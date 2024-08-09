@@ -1,5 +1,5 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+# Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -103,6 +103,7 @@ plugins=(
   brew 
   node 
   npm
+  web-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -146,11 +147,7 @@ export PATH="/usr/local/sbin:$PATH"
 export SDKMAN_DIR="/Users/xq/.sdkman"
 [[ -s "/Users/xq/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/xq/.sdkman/bin/sdkman-init.sh"
 
-export NVM_DIR="/Users/xq/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-source "$HOME/.env"
-source "$HOME/.alias"
+source "$HOME/env/.env.sh"
 
 source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
 
@@ -185,25 +182,39 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # JINA_CLI_END
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/xq/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/xq/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/xq/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/xq/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+
+
 
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Fig post block. Keep at the bottom of this file.
-#[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+[[ "$TERM_PROGRAM" == "CodeEditApp_Terminal" ]] && . "/Applications/CodeEdit.app/Contents/Resources/codeedit_shell_integration.zsh"
+
+[[ "$TERM_PROGRAM" == "CodeEditApp_Terminal" ]] && . "/Users/xq/Library/Developer/Xcode/DerivedData/CodeEdit-ekrdxtdjovbskeapowjcyfarnewc/Build/Products/Debug/CodeEdit.app/Contents/Resources/codeedit_shell_integration.zsh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+# fnm
+FNM_PATH="/Users/xq/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/Users/xq/Library/Application Support/fnm:$PATH"
+  eval "`fnm env`"
+fi

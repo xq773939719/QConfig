@@ -1,31 +1,15 @@
-export BREW_ROOT=/opt/homebrew/Caskroom
-export FLUTTER_ROOT=$HOME/bin/flutter
-export PUB_HOSTED_URL=https://pub.flutter-io.cn
-export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-export ELECTRON_MIRROR="https://npm.taobao.org/mirrors/electron/"
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/ndk-bundle
-export PATH=$PATH:$HOME/anaconda3/bin
-export PATH=$PATH:$HOME/bin
-export PATH=$PATH:$HOME/cmd
-export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$HOME/.npm-global/bin
-export PATH=$PATH:$HOME/bin/depot_tools/
-export PATH=$PATH:$FLUTTER_ROOT/bin/
-export ANDROID_NDK_HOME=$ANDROID_HOME/ndk-bundle/
-export GITLAB_HOME=$HOME/gitlab
-export SKIP_XCODE_VERSION_CHECK=1
-export PYTHONPATH=$(lldb -P)
 
 function proxy_off() {
+        unset no_proxy
         unset http_proxy
         unset https_proxy
         unset ftp_proxy
         unset rsync_proxy
+        unset HTTP_PROXY
+        unset HTTPS_PROXY
+        unset FTP_PROXY
+        unset RSYNC_PROXY
+        env|grep -i proxy
         echo -e "已关闭代理"
 }
 
@@ -39,22 +23,11 @@ function proxy_on() {
         export HTTPS_PROXY=$http_proxy
         export FTP_PROXY=$http_proxy
         export RSYNC_PROXY=$http_proxy
+        env|grep -i proxy
         echo -e "已开启代理"
 }
 
-# C
-export C_INCLUDE_PATH=$C_INCLUDE_PATH:$HOME/QPath/C
-# CPP
-export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:$HOME/QPath/CPP
-
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-# NVM
-export NVM_NODEJS_ORG_MIRROR="https://npmmirror.com/mirrors/node"
-
 # Brew
-
 function homebrew() {
         if [ "$(arch)" = "arm64" ]; then
                 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -70,7 +43,3 @@ function homebrew() {
         export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/bottles"
 }
 homebrew
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
