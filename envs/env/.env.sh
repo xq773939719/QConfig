@@ -3,4 +3,5 @@ source $DIR/.alias.sh
 source $DIR/.args.sh
 source $DIR/.func.sh
 source $DIR/.misc.sh
+source $DIR/.shell.sh
 # echo $DIR

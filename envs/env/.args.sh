@@ -3,11 +3,12 @@
   export PATH=$PATH:$HOME/cmd
   export PATH=$PATH:$HOME/.local/bin
   export PATH=$PATH:$HOME/.npm-global/bin
-  export PATH=$PATH:$HOME/bin/depot_tools/
+  export PATH=$PATH:$HOME/bin/depot_tools
   export PATH=$PATH:/opt/homebrew/opt/ruby/bin
   export PATH=$PATH:/usr/local/opt/bison/bin:/opt/homebrew/opt/bison/bin
-  export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin
-
+  # export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin
+  export PATH=$PATH:'"$(python3 -m site --user-base)"'/bin
+  export PATH=$PATH:/opt/homebrew/opt/make/libexec/gnubin
 }
 
 { # Args
@@ -18,14 +19,17 @@
   export SKIP_XCODE_VERSION_CHECK=1
   export USE_BAZEL_VERSION=latest
   export GIT_CACHE_PATH=/Volumes/Data/Cache/.git_cache
+  export MACH_IGNORE_HGRC_STATE_DIR_MISMATCH=1
+  export MOZBUILD_STATE_PATH=$HOME/.mozbuild
+  export CHROMIUM_BUILDTOOLS_PATH=$HOME/bin/buildtools
   export CHROMIUM_LLDBINIT_SOURCED=1
   export SDKROOT=$(xcrun --sdk macosx --show-sdk-path)
-  export C_INCLUDE_PATH=$C_INCLUDE_PATH:$HOME/QPath/C # C
-  export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:$HOME/QPath/CPP # CPP
+  export C_INCLUDE_PATH="$C_INCLUDE_PATH:$HOME/env/include" # C
+  export CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:$HOME/env/include" # CPP
   export LC_ALL=en_US.UTF-8
   export LANG=en_US.UTF-8
   export NVM_NODEJS_ORG_MIRROR="https://npmmirror.com/mirrors/node" # NVM
-
+  export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo' # 当前repo主要用于同步AOSP、chromium及chromium 
 }
 
 { # Android
@@ -60,11 +64,30 @@
   export FLUTTER_SDK_SRCROOT=$FLUTTER_SDK_PACKAGES/flutter
 }
 
+{ # CCache
+  export USE_CCACHE=1
+  export CCACHE_SLOPPINESS=file_macro,include_file_mtime,time_macros
+  export CCACHE_UMASK=002
+  export SCCACHE_CACHE_SIZE=10G
+  export CCACHE_MAXSIZE=10G
+  export CCACHE_CPP2=true
+  export CCACHE_HARDLINK=true
+  export CCACHE_SLOPPINESS=file_macro,time_macros,include_file_mtime,include_file_ctime,file_stat_matches
+}
+
 { # Electron
+  export ELECTRON_MIRROR=""
+  # 工程源码
+  export ELECTRON_PROJECT_DIR="" # /Volumes/Data/Codes/Electron/electron
+  export ELECTRON_PROJECT_DIR_SRCROOT="" # $ELECTRON_PROJECT_DIR/src
+  export ELECTRON_PROJECT_BUILD_TOOLS="" # $ELECTRON_PROJECT_DIR_SRCROOT/buildtools
+}
+
+
+{ # Chromium
   export ECTREON_MIRROR=""
   # 工程源码
-  export ELECTRON_PROJECT_DIR=/Volumes/Data/Codes/Electron/electron
-  export ELECTRON_PROJECT_DIR_SRCROOT=$ELECTRON_PROJECT_DIR/src
-  export ELECTRON_PROJECT_BUILD_TOOLS=$ELECTRON_PROJECT_DIR_SRCROOT/buildtools
-  export CHROMIUM_BUILDTOOLS_PATH=$ELECTRON_PROJECT_BUILD_TOOLS
+  export ELECTRON_PROJECT_DIR="" # /Volumes/Data/Codes/Chromium/electron
+  export ELECTRON_PROJECT_DIR_SRCROOT="" # $ELECTRON_PROJECT_DIR/src
+  export ELECTRON_PROJECT_BUILD_TOOLS="" # $ELECTRON_PROJECT_DIR_SRCROOT/buildtools
 }

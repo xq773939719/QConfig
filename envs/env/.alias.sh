@@ -22,7 +22,7 @@ alias rm="rm -i" # interactive
 
 alias psg='\ps aux | grep -v grep | grep --color' # 查看进程信息
 
-alias hg='history|grep'
+# alias hg='history|grep'
 
 alias netp='netstat -tulanp' # 查看服务器端口连接信息
 
@@ -152,4 +152,6 @@ function Bili {
 Bili
 
 alias qCodes='cd /Volumes/Data/Codes'
+alias chronos='qCodes && cd ./Bilibili/chronos'
 alias loktar='qCodes && cd ./Bilibili/loktar'
+alias andruid='qCodes && cd ./Bilibili/andruid'
