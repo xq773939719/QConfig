@@ -9,6 +9,7 @@
   # export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin
   export PATH=$PATH:'"$(python3 -m site --user-base)"'/bin
   export PATH=$PATH:/opt/homebrew/opt/make/libexec/gnubin
+  export PATH="/bin:/usr/bin:/usr/local/bin:${PATH}"
 }
 
 { # Args
@@ -16,8 +17,10 @@
   export BREW_ROOT=/opt/homebrew/Caskroom
   export PUB_HOSTED_URL=https://pub.flutter-io.cn
   export GITLAB_HOME=$HOME/gitlab
-  export SKIP_XCODE_VERSION_CHECK=1
-  export USE_BAZEL_VERSION=latest
+  # export SKIP_XCODE_VERSION_CHECK=1
+  # export USE_BAZEL_VERSION=latest
+  # export USE_BAZEL_VERSION=7.3.1
+  export BAZELISK_BASE_URL=https://github.com/bazelbuild/bazel/releases/download
   export GIT_CACHE_PATH=/Volumes/Data/Cache/.git_cache
   export MACH_IGNORE_HGRC_STATE_DIR_MISMATCH=1
   export MOZBUILD_STATE_PATH=$HOME/.mozbuild
@@ -30,6 +33,7 @@
   export LANG=en_US.UTF-8
   export NVM_NODEJS_ORG_MIRROR="https://npmmirror.com/mirrors/node" # NVM
   export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo' # 当前repo主要用于同步AOSP、chromium及chromium 
+  export CMAKE_EXPORT_COMPILE_COMMANDS=1
 }
 
 { # Android
@@ -83,7 +87,6 @@
   export ELECTRON_PROJECT_BUILD_TOOLS="" # $ELECTRON_PROJECT_DIR_SRCROOT/buildtools
 }
 
-
 { # Chromium
   export ECTREON_MIRROR=""
   # 工程源码
@@ -91,3 +94,11 @@
   export ELECTRON_PROJECT_DIR_SRCROOT="" # $ELECTRON_PROJECT_DIR/src
   export ELECTRON_PROJECT_BUILD_TOOLS="" # $ELECTRON_PROJECT_DIR_SRCROOT/buildtools
 }
+
+{ # Chromium Embedded Framework 
+  export CEF_ROOT_DIR=$HOME/bin/cef
+  export CEF_LIBRARY_RELEASE=$CEF_ROOT_DIR
+  export CEF_LIBRARY_WRAPPER_RELEASE=$CEF_ROOT_DIR/Release
+  export CEF_INCLUDE_DIR=$CEF_ROOT_DIR/include
+}
+
