@@ -139,6 +139,25 @@ alias abrew='arch -arm64 /opt/homebrew/bin/brew'
 alias ibrew='arch -x86_64 /usr/local/bin/brew'
 alias sb='sh build.sh'
 
+{ # git
+  alias gcl='git clone'
+  alias gp='git pull'
+  alias gf='git fetch'
+  alias go='git checkout'
+  alias gs='git status'
+  alias ga='git add'
+  alias gb='git branch'
+  alias gc='git commit'
+  alias gd='git diff'
+  alias gl='git log'
+  alias gm='git merge'
+  alias gr='git rebase'
+  alias grc='git rebase --continue'
+  alias grs='git rebase --skip'
+  alias gra='git rebase --abort'
+  alias gcp='git cherry-pick'
+}
+
 function Bili {
   alias bbgf='./bbgit fetch'
   alias bbgp='./bbgit pull'
