@@ -121,6 +121,8 @@ alias to='touch'
 alias hig='history 1 | grep -i'
 alias lv='/Users/xq/.local/bin/lvim'
 alias fixapp='sudo xattr -rd com.apple.quarantine'
+alias qc='python3 main.py'
+alias senv='source ~/env/.env.sh'
 alias vm=nvim
 # alias ll='colorls -lA --sd --gs --group-directories-first'
 # alias ls='colorls --group-directories-first'
@@ -132,12 +134,13 @@ alias vm=nvim
 # alias lS='colorls -lS  --git-status'            # List, sort by size (largest first)
 # alias lr='colorls --tree=5'                     # Show tree heirarchy, capped at depth 5 just in case
 # alias lx='colorls -lAX --git-status'            # List, Sort by file type
-alias gitpullall='find . -maxdepth 3 -type d -name .git  -exec sh -c "cd \"{}\"/../ && pwd && git  pull --rebase" \;'
 alias o='open .'
 alias e='code .'
 alias abrew='arch -arm64 /opt/homebrew/bin/brew'
 alias ibrew='arch -x86_64 /usr/local/bin/brew'
-alias sb='sh build.sh'
+alias qCodes='cd /Volumes/Data/Codes'
+alias poi='pod install'
+alias pou='pod update'
 
 { # git
   alias gcl='git clone'
@@ -158,7 +161,14 @@ alias sb='sh build.sh'
   alias gcp='git cherry-pick'
 }
 
-function Bili {
+{ # pod
+  alias poi='pod install'
+  alias pou='pod update'
+  alias pall='pou && poi'
+}
+
+{ # Bili 
+  alias sb='sh build.sh'
   alias bbgf='./bbgit fetch'
   alias bbgp='./bbgit pull'
   alias bbgc='./bbgit checkout'
@@ -167,10 +177,7 @@ function Bili {
   alias bbgmr='./bbgit mr -t'
   alias bbgprune='./bbgit prune'
   alias bbsh='sh build.sh'
+  alias chronos='qCodes && cd ./Bilibili/chronos'
+  alias loktar='qCodes && cd ./Bilibili/loktar'
+  alias andruid='qCodes && cd ./Bilibili/andruid'
 }
-Bili
-
-alias qCodes='cd /Volumes/Data/Codes'
-alias chronos='qCodes && cd ./Bilibili/chronos'
-alias loktar='qCodes && cd ./Bilibili/loktar'
-alias andruid='qCodes && cd ./Bilibili/andruid'
