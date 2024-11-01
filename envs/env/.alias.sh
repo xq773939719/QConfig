@@ -121,7 +121,7 @@ alias to='touch'
 alias hig='history 1 | grep -i'
 alias lv='/Users/xq/.local/bin/lvim'
 alias fixapp='sudo xattr -rd com.apple.quarantine'
-alias qc='python3 main.py'
+alias pm='python3 main.py'
 alias senv='source ~/env/.env.sh'
 alias vm=nvim
 # alias ll='colorls -lA --sd --gs --group-directories-first'
@@ -165,6 +165,12 @@ alias pou='pod update'
   alias poi='pod install'
   alias pou='pod update'
   alias pall='pou && poi'
+}
+
+# special case
+
+{ # command
+  alias qc='qCodes && cd InjectLib && pm'
 }
 
 { # Bili 
