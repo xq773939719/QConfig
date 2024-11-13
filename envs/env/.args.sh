@@ -4,12 +4,12 @@
   export PATH=$PATH:$HOME/.local/bin
   export PATH=$PATH:$HOME/.npm-global/bin
   export PATH=$PATH:$HOME/bin/depot_tools
-  export PATH=$PATH:/opt/homebrew/opt/ruby/bin
   export PATH=$PATH:/usr/local/opt/bison/bin:/opt/homebrew/opt/bison/bin
   # export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin
   export PATH=$PATH:'"$(python3 -m site --user-base)"'/bin
   export PATH=$PATH:/opt/homebrew/opt/make/libexec/gnubin
   export PATH="/bin:/usr/bin:/usr/local/bin:${PATH}"
+  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 }
 
 { # Args
@@ -70,10 +70,11 @@
 
 { # CCache
   export USE_CCACHE=1
+  export CCACHE_DIR="/Volumes/Data/Cache/ccache"
+  export CCACHE_MAXSIZE="100G"
   export CCACHE_SLOPPINESS=file_macro,include_file_mtime,time_macros
   export CCACHE_UMASK=002
   export SCCACHE_CACHE_SIZE=10G
-  export CCACHE_MAXSIZE=10G
   export CCACHE_CPP2=true
   export CCACHE_HARDLINK=true
   export CCACHE_SLOPPINESS=file_macro,time_macros,include_file_mtime,include_file_ctime,file_stat_matches
