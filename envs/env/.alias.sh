@@ -161,6 +161,12 @@ alias pou='pod update'
   alias gcp='git cherry-pick'
 }
 
+{ # npm
+  alias npmr='npm run'
+  alias npms='npm start'
+  alias npmb='npm build'
+}
+
 { # pod
   alias poi='pod install'
   alias pou='pod update'
