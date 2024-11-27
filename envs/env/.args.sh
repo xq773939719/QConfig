@@ -4,6 +4,7 @@
   export PATH=$PATH:$HOME/.local/bin
   export PATH=$PATH:$HOME/.npm-global/bin
   export PATH=$PATH:$HOME/bin/depot_tools
+  export PATH=$PATH:$HOME/bin/flutter/bin
   export PATH=$PATH:/usr/local/opt/bison/bin:/opt/homebrew/opt/bison/bin
   # export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin
   export PATH=$PATH:'"$(python3 -m site --user-base)"'/bin
@@ -34,6 +35,8 @@
   export NVM_NODEJS_ORG_MIRROR="https://npmmirror.com/mirrors/node" # NVM
   export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo' # 当前repo主要用于同步AOSP、chromium及chromium 
   export CMAKE_EXPORT_COMPILE_COMMANDS=1
+  export CMAKE_C_COMPILER="$(xcrun -find cc)"
+  export CMAKE_CXX_COMPILER="$(xcrun -find c++)"
 }
 
 { # Android
