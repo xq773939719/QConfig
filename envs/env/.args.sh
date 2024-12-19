@@ -15,8 +15,7 @@
 
 { # Args
   export PYTHONPATH=`lldb -P`
-  export BREW_ROOT=/opt/homebrew/Caskroom
-  export PUB_HOSTED_URL=https://pub.flutter-io.cn
+  # export BREW_ROOT=/opt/homebrew/Caskroom
   export GITLAB_HOME=$HOME/gitlab
   # export SKIP_XCODE_VERSION_CHECK=1
   # export USE_BAZEL_VERSION=latest
@@ -51,7 +50,10 @@
 }
 
 { # Flutter
-  export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+  # export PUB_HOSTED_URL=https://pub.flutter-io.cn
+  # export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+  export PUB_HOSTED_URL="https://mirror.nju.edu.cn/dart-pub"
+  export FLUTTER_STORAGE_BASE_URL="https://mirror.nju.edu.cn/flutter"
   # 工程源码
   export FLUTTER_PROJECT_DIR=/Volumes/Data/Codes/Flutter
 
