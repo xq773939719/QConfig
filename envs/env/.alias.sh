@@ -193,3 +193,6 @@ alias pou='pod update'
   alias loktar='qCodes && cd ./Bilibili/loktar'
   alias andruid='qCodes && cd ./Bilibili/andruid'
 }
+{ # Temu
+  alias temu='cd /Volumes/Work/Temu/Codes'
+}
