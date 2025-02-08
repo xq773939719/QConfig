@@ -11,6 +11,7 @@
   export PATH=$PATH:/opt/homebrew/opt/make/libexec/gnubin
   export PATH="/bin:/usr/bin:/usr/local/bin:${PATH}"
   export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+  export PATH="/Users/xq/.deno/bin:$PATH"
 }
 
 { # Args
@@ -34,8 +35,8 @@
   export NVM_NODEJS_ORG_MIRROR="https://npmmirror.com/mirrors/node" # NVM
   export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo' # 当前repo主要用于同步AOSP、chromium及chromium 
   export CMAKE_EXPORT_COMPILE_COMMANDS=1
-  export CMAKE_C_COMPILER="$(xcrun -find cc)"
-  export CMAKE_CXX_COMPILER="$(xcrun -find c++)"
+  # export CMAKE_C_COMPILER="$(xcrun -find cc)"
+  # export CMAKE_CXX_COMPILER="$(xcrun -find c++)"
 }
 
 { # Android
