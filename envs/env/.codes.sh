@@ -7,5 +7,7 @@ alias FireFoxCode="cd && qCodes && cd FireFox/FireFox"
 alias ZenCode="cd && qCodes && cd Zen/desktop"
 alias ZedCode="cd && qCodes && cd Zed/zed"
 alias ElectronCode="cd && qCodes && cd Electron"
+alias SkiaCode="cd && qCodes && cd Skia"
+alias LinuxCode="cd && qCodes && cd Linux/linux"
 
 alias FastClient="gclient sync --with_branch_heads --with_tags --no-history -v"
