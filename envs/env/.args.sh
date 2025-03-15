@@ -51,10 +51,8 @@
 }
 
 { # Flutter
-  # export PUB_HOSTED_URL=https://pub.flutter-io.cn
-  # export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-  export PUB_HOSTED_URL="https://mirror.nju.edu.cn/dart-pub"
-  export FLUTTER_STORAGE_BASE_URL="https://mirror.nju.edu.cn/flutter"
+  export PUB_HOSTED_URL=https://pub.flutter-io.cn
+  export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
   # 工程源码
   export FLUTTER_PROJECT_DIR=/Volumes/Data/Codes/Flutter
 
