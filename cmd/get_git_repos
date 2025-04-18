@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# 定义输出文件路径
+output_file="git_remotes.txt"
+
+# 清空或创建输出文件
+> "$output_file"  # 清空文件
+
+# 使用find查找最多两层子目录中的.git仓库
+find . \( -mindepth 1 -maxdepth 2 \) -type d -exec sh -c '
+    # 检查目录是否存在.git子目录
+    test -d "$1/.git" && printf "%s\0" "$1"
+' _ {} \; | while IFS= read -r -d '' repo_dir; do
+    # 转换为绝对路径
+    repo_dir_abs=$(realpath "$repo_dir")
+
+    # 获取远程地址（忽略错误）
+    remote_urls=$(git --git-dir="$repo_dir_abs/.git" remote -v 2>/dev/null | 
+        grep '(fetch)' | 
+        awk '{print $2}')
+
+    # 如果没有远程地址则跳过
+    if [ -z "$remote_urls" ]; then
+        continue
+    fi
+
+    # 直接输出远程地址到文件（不包含路径）
+    echo "$remote_urls" >> "$output_file"
+done
+
+echo "扫描完成（最多两层子目录），远程地址已保存到 $output_file"
