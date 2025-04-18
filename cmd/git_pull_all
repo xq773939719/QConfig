@@ -1,0 +1,1 @@
+find . -maxdepth 3 -type d -name .git  -exec sh -c "cd \"{}\"/../ && pwd && git stash && git  pull --rebase" \;

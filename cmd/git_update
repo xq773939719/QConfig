@@ -1,0 +1,60 @@
+#!/bin/bash
+# 批量克隆或更新Git仓库的脚本（支持指定目标目录）
+
+# 检查参数数量（可选参数：目标目录）
+if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
+    echo "用法: $0 <仓库地址列表文件> [目标目录路径]"
+    echo "示例文件格式: 每行一个仓库地址（#开头为注释行）"
+    exit 1
+fi
+
+REPO_FILE="$1"
+TARGET_DIR="${2:-./}"  # 默认目标目录为当前目录
+
+# 检查文件是否存在
+if [ ! -f "$REPO_FILE" ]; then
+    echo "错误: 文件 $REPO_FILE 不存在！"
+    exit 1
+fi
+
+# 确保目标目录存在
+mkdir -p "$TARGET_DIR" || {
+    echo "错误: 无法创建目标目录 $TARGET_DIR"
+    exit 1
+}
+
+# 逐行处理仓库地址
+while IFS= read -r line; do
+    # 跳过空行和注释行
+    line=$(echo "$line" | sed 's/#.*//')
+    repo_url=$(echo "$line" | tr -d '[:space:]')
+    if [ -z "$repo_url" ]; then
+        continue
+    fi
+
+    # 提取仓库名称（去除.git后缀）
+    repo_name=$(basename "$repo_url" .git)
+    repo_dir="$TARGET_DIR/$repo_name"
+
+    echo "--------------------------"
+    echo "处理仓库: $repo_url"
+
+    # 检查仓库目录是否存在
+    if [ -d "$repo_dir" ]; then
+        # 已存在，执行git pull
+        echo "正在更新仓库: $repo_name（路径: $repo_dir）"
+        (cd "$repo_dir" && git pull --rebase)
+    else
+        # 不存在，执行git clone
+        echo "正在克隆新仓库: $repo_name（路径: $TARGET_DIR）"
+        git clone -v "$repo_url" "$repo_dir"
+    fi
+
+    # 处理错误
+    if [ $? -ne 0 ]; then
+        echo "警告: 处理 $repo_url 时发生错误，请检查网络或权限"
+    fi
+done < "$REPO_FILE"
+
+echo "--------------------------"
+echo "所有操作完成！"
