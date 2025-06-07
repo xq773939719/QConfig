@@ -14,6 +14,11 @@
   export PATH="/Users/xq/.deno/bin:$PATH"
 }
 
+{ # NVMD
+  export NVMD_DIR="$HOME/.nvmd"
+  export PATH="$NVMD_DIR/bin:$PATH"
+}
+
 { # Args
   export PYTHONPATH=`lldb -P`
   # export BREW_ROOT=/opt/homebrew/Caskroom
