@@ -9,9 +9,11 @@
   # export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin
   export PATH=$PATH:'"$(python3 -m site --user-base)"'/bin
   export PATH=$PATH:/opt/homebrew/opt/make/libexec/gnubin
-  export PATH="/bin:/usr/bin:/usr/local/bin:${PATH}"
-  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-  export PATH="/Users/xq/.deno/bin:$PATH"
+  export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
+  export PATH=$PATH:/opt/homebrew/opt/ruby/bin
+  export PATH=$PATH:/opt/homebrew/opt/ruby@3.2/bin
+  export PATH=$PATH:/Users/xq/.deno/bin:$PATH
+  export PATH=$PATH:/opt/homebrew/opt/llvm/bin
 }
 
 { # NVMD
@@ -42,6 +44,8 @@
   export CMAKE_EXPORT_COMPILE_COMMANDS=1
   # export CMAKE_C_COMPILER="$(xcrun -find cc)"
   # export CMAKE_CXX_COMPILER="$(xcrun -find c++)"
+  export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 }
 
 { # Android
@@ -52,7 +56,8 @@
   export PATH=$PATH:$ANDROID_HOME/emulator
   export PATH=$PATH:$ANDROID_HOME/ndk-bundle
   export ANDROID_NDK_HOME=$ANDROID_HOME/ndk-bundle/
-  export NDK=$ANDROID_HOME/ndk-bundle/
+  export NDK_HOME=$ANDROID_NDK_HOME
+  export NDK=$ANDROID_NDK_HOME
 }
 
 { # Flutter
