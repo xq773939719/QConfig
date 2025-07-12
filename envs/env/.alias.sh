@@ -161,6 +161,13 @@ alias pou='pod update'
   # alias gcp='git cherry-pick'
 }
 
+{ # brew
+  alias brewBackup='brew bundle dump --file=~/Brewfile'
+  alias brewRestore='brew bundle --file=~/Brewfile'
+  alias brewUpdate='brew update && brew upgrade && brew cleanup'
+  alias brewUpdateCask='brew update && brew upgrade --cask && brew cleanup'
+}
+
 { # npm
   alias npmr='npm run'
   alias npms='npm start'
