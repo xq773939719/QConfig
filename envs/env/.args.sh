@@ -5,15 +5,16 @@
   export PATH=$PATH:$HOME/.npm-global/bin
   export PATH=$PATH:$HOME/bin/depot_tools
   export PATH=$PATH:$HOME/bin/flutter/bin
+  export PATH=$PATH:$HOME/bin/memos
+  export PATH=$PATH:$HOME/.deno/bin:$PATH
   export PATH=$PATH:/usr/local/opt/bison/bin:/opt/homebrew/opt/bison/bin
-  # export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin
+  export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
   export PATH=$PATH:'"$(python3 -m site --user-base)"'/bin
   export PATH=$PATH:/opt/homebrew/opt/make/libexec/gnubin
-  export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
   export PATH=$PATH:/opt/homebrew/opt/ruby/bin
   export PATH=$PATH:/opt/homebrew/opt/ruby@3.2/bin
-  export PATH=$PATH:/Users/xq/.deno/bin:$PATH
   export PATH=$PATH:/opt/homebrew/opt/llvm/bin
+  # export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin
 }
 
 { # NVMD
