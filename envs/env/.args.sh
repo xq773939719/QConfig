@@ -11,10 +11,16 @@
   export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
   export PATH=$PATH:'"$(python3 -m site --user-base)"'/bin
   export PATH=$PATH:/opt/homebrew/opt/make/libexec/gnubin
-  export PATH=$PATH:/opt/homebrew/opt/ruby/bin
-  export PATH=$PATH:/opt/homebrew/opt/ruby@3.2/bin
+  # export PATH=$PATH:/opt/homebrew/opt/ruby/bin
+  # export PATH=$PATH:/opt/homebrew/opt/ruby@3.2/bin
   export PATH=$PATH:/opt/homebrew/opt/llvm/bin
   # export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin
+}
+
+{ # rbenv
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+  export RUBY_BUILD_MIRROR_URL=https://cache.ruby-china.com
 }
 
 { # NVMD
