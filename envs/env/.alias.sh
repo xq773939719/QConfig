@@ -124,6 +124,7 @@ alias fixapp='sudo xattr -rd com.apple.quarantine'
 alias pm='python3 main.py'
 alias senv='source ~/env/.env.sh'
 alias vm=nvim
+alias vim=nvim
 # alias ll='colorls -lA --sd --gs --group-directories-first'
 # alias ls='colorls --group-directories-first'
 # alias lc='colorls'                              # Colorls with no options
