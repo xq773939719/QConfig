@@ -142,6 +142,7 @@ alias ibrew='arch -x86_64 /usr/local/bin/brew'
 alias qCodes='cd /Volumes/Data/Codes'
 alias poi='pod install'
 alias pou='pod update'
+alias poui='pou && poi'
 alias piu='pod install --repo-update'
 
 { # git
