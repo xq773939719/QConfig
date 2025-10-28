@@ -1,3 +1,5 @@
+alias FastClient="gclient sync --with_branch_heads --with_tags --no-history -v"
+
 alias WebKitCode="cd && qCodes && cd Apple/WebKit"
 alias SwiftCode="cd && qCodes && cd Apple/Swift"
 alias V8Code="cd && qCodes && cd V8"
@@ -9,5 +11,6 @@ alias ZedCode="cd && qCodes && cd Zed/zed"
 alias ElectronCode="cd && qCodes && cd Electron"
 alias SkiaCode="cd && qCodes && cd Skia"
 alias LinuxCode="cd && qCodes && cd Linux/linux"
-
-alias FastClient="gclient sync --with_branch_heads --with_tags --no-history -v"
+alias ExpoCode="cd qCodes && cd Expo/source/expo"
+alias Deno="cd qCodes && cd Deno/deno"
+alias Bun="cd qCodes && cd Bun/bun"
