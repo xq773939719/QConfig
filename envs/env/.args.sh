@@ -65,6 +65,7 @@
   export ANDROID_NDK_HOME=$ANDROID_HOME/ndk-bundle/
   export NDK_HOME=$ANDROID_NDK_HOME
   export NDK=$ANDROID_NDK_HOME
+  export JAVA_HOME=$HOME/.sdkman/candidates/java/current
 }
 
 { # Flutter
