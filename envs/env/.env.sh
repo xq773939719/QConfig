@@ -6,4 +6,5 @@ source $DIR/.misc.sh
 source $DIR/.shell.sh
 source $DIR/.codes.sh
 source $DIR/.api.sh
+source $DIR/.ai.sh
 # echo $DIR
