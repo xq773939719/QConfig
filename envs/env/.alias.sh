@@ -178,32 +178,8 @@ alias piu='pod install --repo-update'
   alias npmb='npm build'
 }
 
-{ # pod
-  alias poi='pod install'
-  alias pou='pod update'
-  alias pall='pou && poi'
-}
-
 # special case
 
 { # command
   alias qc='qCodes && cd InjectLib && pm'
-}
-
-{ # Bili 
-  alias sb='sh build.sh'
-  alias bbgf='./bbgit fetch'
-  alias bbgp='./bbgit pull'
-  alias bbgc='./bbgit checkout'
-  alias bbgr='./bbgit reset --hard'
-  alias bbgd='./bbgit diff'
-  alias bbgmr='./bbgit mr -t'
-  alias bbgprune='./bbgit prune'
-  alias bbsh='sh build.sh'
-  alias chronos='qCodes && cd ./Bilibili/chronos'
-  alias loktar='qCodes && cd ./Bilibili/loktar'
-  alias andruid='qCodes && cd ./Bilibili/andruid'
-}
-{ # Temu
-  alias temu='cd /Volumes/Work/Temu/Codes'
 }

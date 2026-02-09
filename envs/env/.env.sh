@@ -7,4 +7,5 @@ source $DIR/.shell.sh
 source $DIR/.codes.sh
 source $DIR/.api.sh
 source $DIR/.ai.sh
+source $DIR/.tmux.sh
 # echo $DIR
