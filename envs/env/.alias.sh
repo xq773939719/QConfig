@@ -178,10 +178,10 @@ alias piu='pod install --repo-update'
 }
 
 { # workspace
-  alias ws_opencode='cd ai/opencode && opencode'
-  alias ws_claude='cd ai/claude && ollama_claude'
-  alias ws_qwen='cd ai/qwen && qwen'
-  alias ws_openclaw='cd ai/openclaw && openclaw tui'
+  alias ws_opencode='cd $HOME/ai/opencode && opencode'
+  alias ws_claude='cd $HOME/ai/claude && ollama_claude'
+  alias ws_qwen='cd $HOME/ai/qwen && qwen'
+  alias ws_openclaw='cd $HOME/ai/openclaw && openclaw tui'
 }
 
 # special case
