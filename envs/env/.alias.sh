@@ -142,7 +142,6 @@ alias ibrew='arch -x86_64 /usr/local/bin/brew'
 alias qCodes='cd /Volumes/Data/Codes'
 alias poi='pod install'
 alias pou='pod update'
-alias poui='pou && poi'
 alias piu='pod install --repo-update'
 
 { # git
@@ -176,6 +175,13 @@ alias piu='pod install --repo-update'
   alias npmr='npm run'
   alias npms='npm start'
   alias npmb='npm build'
+}
+
+{ # workspace
+  alias ws_opencode='cd ai/opencode && opencode'
+  alias ws_claude='cd ai/claude && ollama_claude'
+  alias ws_qwen='cd ai/qwen && qwen'
+  alias ws_openclaw='cd ai/openclaw && openclaw tui'
 }
 
 # special case
