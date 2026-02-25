@@ -30,10 +30,10 @@ function proxy_on() {
 function daily_update() {
   brew update && brew upgrade
   rustup update
-  pnpm self-update
+  # pnpm self-update
   curl -fsSL https://bun.com/install | bash
   pip install --upgrade pip
-  sdk selfupdate && sdk upgrade
+  # sdk selfupdate && sdk upgrade
   uv self update
   omz update
 }
@@ -46,6 +46,8 @@ function list_tui_commands() {
   echo "- qodercli: Qwen coder CLI"
   echo "- codex: GitHub Copilot CLI"
   echo "- qwen: Qwen CLI"
+  echo "- kimi: Kimi CLI"
+  echo "- kimi-cli: Kimi command-line interface"
   echo "- toad: Database management CLI"
   echo ""
   echo "Development & Code Editors:"
