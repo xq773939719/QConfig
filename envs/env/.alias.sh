@@ -165,6 +165,7 @@ alias piu='pod install --repo-update'
 }
 
 { # brew
+  alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
   alias brewBackup='brew bundle dump --file=~/Brewfile'
   alias brewRestore='brew bundle --file=~/Brewfile'
   alias brewUpdate='brew update && brew upgrade && brew cleanup'
