@@ -31,6 +31,7 @@ function daily_update() {
   brew update && brew upgrade
   rustup update
   # pnpm self-update
+  corepack use pnpm@latest
   curl -fsSL https://bun.com/install | bash
   pip install --upgrade pip
   # sdk selfupdate && sdk upgrade
