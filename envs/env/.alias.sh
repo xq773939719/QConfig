@@ -185,6 +185,8 @@ alias piu='pod install --repo-update'
   alias ws_claude='cd $HOME/ai/claude && ollama_claude'
   alias ws_codex='cd $HOME/ai/codex && codex'
   alias ws_openclaw='cd $HOME/ai/openclaw && openclaw tui'
+  alias ws_kilo='cd $HOME/ai/kilo && kilo'
+  alias ws_iflow='cd $HOME/ai/iflow && iflow'
   # 
   alias ws_ollama_opencode='cd $HOME/ai/opencode && ollama_opencode'
   alias ws_ollama_claude='cd $HOME/ai/claude && ollama_claude'
