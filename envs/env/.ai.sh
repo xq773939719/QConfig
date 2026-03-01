@@ -3,6 +3,7 @@ launchctl setenv OLLAMA_MODELS /Volumes/Data/AI/ollama/models
 
 export LMSTUDIO_API_BASE=http://localhost:1234
 export OLLAMA_API_BASE=http://localhost:11434
+export JAN_API_BASE=http://localhost:1337
 
 export ANTHROPIC_API_KEY=""
 
@@ -14,6 +15,11 @@ function ANTHROPIC_LMSTUDIO() {
 function ANTHROPIC_OLLAMA() {
   export ANTHROPIC_AUTH_TOKEN="ollama"
   export ANTHROPIC_BASE_URL="$OLLAMA_API_BASE"
+}
+
+function ANTHROPIC_JAN() {
+  export ANTHROPIC_AUTH_TOKEN='jan'
+  export ANTHROPIC_BASE_URL="$JAN_API_BASE"
 }
 
 function ANTHROPIC_DEFAULT() {
